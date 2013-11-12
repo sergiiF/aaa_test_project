@@ -13,6 +13,7 @@ PKG_NAME = 'cp_test_project'
 def run_cmd(prefix, cmd):
     if prefix:
         cmd = ' && '.join([prefix, cmd])
+    print 'Cmd to be run:', cmd
     ret_code = os.system(cmd)
     if ret_code:
         raise RuntimeError('cmd: %(cmd)s failed with return code %(ret_code)s'
@@ -29,6 +30,8 @@ if __name__ == '__main__':
                         help='Do not install venv')
     parser.add_argument('--coverage', action='store_true',
                         help='Generate coverage report')
+    parser.add_argument('--functional', action='store_true',  default=False,
+                        help='Run functional tests')
     args = parser.parse_args()
 
     prefix = ''
@@ -57,3 +60,6 @@ if __name__ == '__main__':
             run_cmd('coverage erase')
         ut_cmd.append(PKG_NAME)
         run_cmd(' '.join(ut_cmd))
+
+    if args.functional:
+        run_cmd('sct -v -v -f sctfile_ws_macro hello_world.macro_check_hello')

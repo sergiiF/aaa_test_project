@@ -2,9 +2,9 @@ virtualenv pecan-env
 
 source pecan-env/bin/activate
 
-pip install pecan
+#pip install pecan
 
-pecan create test_project
+#pecan create cp_test_project
 
 python setup.py develop
 
@@ -15,4 +15,4 @@ wget http://127.0.0.1:8080/hello.json?name=you -O hello.json
 
 #Unit testing
 nosetests
-nosetests test_project.tests.test_functional
+nosetests cp_test_project.tests.test_functional
