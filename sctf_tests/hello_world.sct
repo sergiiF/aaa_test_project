@@ -23,5 +23,4 @@
         param_dict:
           name: you
         validation_data:
-#          response: hello you
-          response: not hello you
+          response: hello you
