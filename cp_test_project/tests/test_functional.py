@@ -29,3 +29,6 @@ class TestRootController(FunctionalTest):
 
         assert response.status_int == 200
         assert body['response'] == 'qwerty'
+
+    def test_hello_api(self):
+        assert root.hello('me') == 'hello me'
