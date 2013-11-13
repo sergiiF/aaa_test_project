@@ -1,0 +1,26 @@
+---
+- - import
+  - import_name: os
+  - import_name: sctf.sctf_http
+    as_name: sctf_http
+- - include
+  - path: ws_macros.sct
+- type: test_procedure_def
+  name: macro_check_hello
+  summary: test procedure to check the hello_world web service
+  description: |
+               Call the hello_world web service and verify that
+               the returned dictionary has the correct response
+  child_list:
+  - - macro
+    # - __debug_flag__
+    - macro_name: __current_eval__.ws_macros.web_service_macro
+      # show_macro_expansion_p: 1
+      arg_map:
+        test_case_name: call_hello_ws
+        #url: http://127.0.0.1:8080/hello.json
+        url: http://%(ws_ip_address)s:8080/hello.json
+        param_dict: 
+          name: you
+        validation_data:
+          response: hello there you

@@ -1,0 +1,10 @@
+---
+- - sys_path
+  - path: ./lib
+  - path: ./tests
+  - path: ./macros
+- - include
+  - path: hello_world.sct
+- - var
+  - name: ws_ip_address
+    value: 10.172.155.16

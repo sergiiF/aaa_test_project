@@ -32,8 +32,7 @@ if __name__ == '__main__':
                         help='Generate coverage report')
     parser.add_argument('--functional', action='store_true', default=False,
                         help='Run functional tests')
-    parser.add_argument('--cst_path', default=None,
-                        help='Run functional tests')
+
     args = parser.parse_args()
 
     prefix = ''
@@ -63,9 +62,6 @@ if __name__ == '__main__':
         run_cmd(' '.join(ut_cmd))
 
     if args.functional:
-        cmd = ' '.join((os.path.join(args.cst_path, 'bin/sct'),
-                        '-v -v -f',
-                        os.path.join(args.cst_path, 'sctfile_ws_macro'),
-                        'hello_world.macro_check_hello'))
-        run_cmd(cmd)
-
+        test_dir = os.path.abspath(os.path.dirname(__file__))
+        test_dir = os.path.join(test_dir, 'sctf_tests')
+        run_cmd('nosetests %s' % test_dir)
