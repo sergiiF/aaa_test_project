@@ -1,6 +1,5 @@
-import flexmock
 import json
-
+import flexmock
 from cp_test_project.tests import FunctionalTest
 from cp_test_project.controllers import root
 

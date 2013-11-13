@@ -5,10 +5,16 @@ from cp_test_project import model
 def setup_app(config):
 
     model.init_model()
-    app_conf = dict(config.app)
 
     return make_app(
-        app_conf.pop('root'),
+        config.app.root,
+        static_root=config.app.static_root,
+        template_path=config.app.template_path,
         logging=getattr(config, 'logging', {}),
-        **app_conf
+        debug=getattr(config.app, 'debug', False),
+        force_canonical=getattr(config.app, 'force_canonical', True),
+        guess_content_type_from_ext=getattr(
+            config.app,
+            'guess_content_type_from_ext',
+            True),
     )

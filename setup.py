@@ -13,7 +13,7 @@ setup(
     author='',
     author_email='',
     install_requires=[
-        "pecan", "flexmock", "nose", 'flake8', 'coverage'
+    "pecan==0.2.3", "flexmock", "nose", 'flake8', 'coverage'
     ],
     test_suite='cp_test_project',
     zip_safe=False,

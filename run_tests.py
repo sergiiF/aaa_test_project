@@ -30,7 +30,7 @@ if __name__ == '__main__':
                         help='Do not install venv')
     parser.add_argument('--coverage', action='store_true',
                         help='Generate coverage report')
-    parser.add_argument('--functional', action='store_true',  default=False,
+    parser.add_argument('--functional', action='store_true', default=False,
                         help='Run functional tests')
     parser.add_argument('--cst_path', default=None,
                         help='Run functional tests')
@@ -68,3 +68,4 @@ if __name__ == '__main__':
                         os.path.join(args.cst_path, 'sctfile_ws_macro'),
                         'hello_world.macro_check_hello'))
         run_cmd(cmd)
+

@@ -20,9 +20,7 @@ app = {
 logging = {
     'loggers': {
         'root': {'level': 'INFO', 'handlers': ['console']},
-        'cp_test_project': {'level': 'DEBUG', 'handlers': ['console']},
-        'py.warnings': {'handlers': ['console']},
-        '__force_dict__': True
+        'cp_test_project': {'level': 'DEBUG', 'handlers': ['console']}
     },
     'handlers': {
         'console': {
