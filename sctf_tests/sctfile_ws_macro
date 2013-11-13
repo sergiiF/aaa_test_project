@@ -1,5 +1,7 @@
 ---
 - - sys_path
+  - path: ./lib
+  - path: ./tests
   - path: ./macros
 - - include
   - path: hello_world.sct
