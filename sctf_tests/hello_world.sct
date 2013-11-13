@@ -20,7 +20,7 @@
         test_case_name: call_hello_ws
         #url: http://127.0.0.1:8080/hello.json
         url: http://%(ws_ip_address)s:8080/hello.json
-        param_dict: 
+        param_dict:
           name: you
         validation_data:
           response: hello there you
