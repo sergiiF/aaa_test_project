@@ -31,4 +31,4 @@ class TestRootController(FunctionalTest):
         assert body['response'] == 'qwerty'
 
     def test_hello_api(self):
-        assert root.hello('me') == 'hello me'
+        assert root.hello('me') == 'hello there me'
