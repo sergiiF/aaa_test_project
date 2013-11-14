@@ -4,7 +4,7 @@ from webob.exc import status_map
 
 def hello(name):
 
-    return "hello %s" % name
+    return "hello there %s" % name
 
 
 class RootController(object):
