@@ -3,6 +3,7 @@ from webob.exc import status_map
 
 
 def hello(name):
+
     return "hello %s" % name
 
 
