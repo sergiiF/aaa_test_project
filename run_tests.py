@@ -4,6 +4,7 @@ __author__ = 'sergii'
 import argparse
 import functools
 import os
+import sys
 
 
 VENV_DIR = '.venv'
@@ -16,8 +17,8 @@ def run_cmd(prefix, cmd):
     print 'Cmd to be run:', cmd
     ret_code = os.system(cmd)
     if ret_code:
-        raise RuntimeError('cmd: %(cmd)s failed with return code %(ret_code)s'
-                           % locals())
+        print 'cmd: %(cmd)s failed with return code %(ret_code)s' % locals()
+        sys.exit(1)
 
 
 if __name__ == '__main__':
